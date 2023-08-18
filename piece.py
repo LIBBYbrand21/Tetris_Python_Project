@@ -9,6 +9,8 @@ class Piece:
         self.image = cv2.imread(path)
         self.height, self.width, self.channels = self.image.shape
         self.location = np.array([0, random.randint(0, canvas_width-self.width)])
+        self.location = self.location - self.location % 10
+        print(self.location)
         self.velocity = np.array([1, 0])
 
     def draw(self, canvas):

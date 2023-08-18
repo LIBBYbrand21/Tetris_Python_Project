@@ -88,9 +88,11 @@ while True:
 background.pause()
 org = (150, 600)
 fontScale = 10
-color = (0, 0, 255)
+color = (50, 50, 255)
 thickness = 15
 canvasImage = cv2.putText(canvasImage, 'Game Over', org, cv2.FONT_HERSHEY_SIMPLEX,
                           fontScale, color, thickness, cv2.LINE_AA)
 cv2.imshow('canvas', canvasImage)
-cv2.waitKey()
+key1 = cv2.waitKey(10)
+while key1 != 27:
+    key1 = cv2.waitKey(10)
